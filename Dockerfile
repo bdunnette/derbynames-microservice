@@ -1,8 +1,10 @@
 # syntax=docker/dockerfile:1
 
-FROM python:3.9-slim-buster
+FROM python:3.9-slim
 
-WORKDIR /python-docker
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV PIP_DISABLE_PIP_VERSION_CHECK=1
 
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt

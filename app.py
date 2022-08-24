@@ -1,3 +1,5 @@
+import os
+
 from aitextgen import aitextgen
 from flask import Flask, jsonify
 
@@ -21,4 +23,10 @@ def generate_name():
 def generate_name_prompt(prompt):
     generated = ai.generate_one(prompt=prompt).strip()
     app.logger.info(generated)
-    return jsonify({"name": generated})
+    return jsonify({"name": generated, "prompt": prompt})
+
+
+if __name__ == "__main__":
+    # Bind to PORT if defined, otherwise default to 5000.
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
