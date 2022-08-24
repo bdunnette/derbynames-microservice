@@ -1,15 +1,17 @@
 # import os
 
 from aitextgen import aitextgen
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 
 app = Flask(__name__)
+app.config["TEMPLATES_AUTO_RELOAD"] = True
+
 ai = aitextgen(model_folder="model", tokenizer_file="model/aitextgen.tokenizer.json")
 
 
 @app.route("/")
-def home():
-    return "Hello, Flask!"
+def home(name=None):
+    return render_template("index.html", name=name)
 
 
 @app.route("/name/")
