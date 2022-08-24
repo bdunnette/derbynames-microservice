@@ -20,6 +20,8 @@ env:
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
+  # set "CI" flag to disable e.g. pipenv progressbar  
+  CI: 1
 
 
 jobs:
