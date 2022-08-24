@@ -1,1 +1,1 @@
-web: gunicorn -b 0.0.0.0 -w 4 app:app
+web: python -m flask run --host=0.0.0.0 --port=5000
