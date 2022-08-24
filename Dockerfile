@@ -36,4 +36,5 @@ EXPOSE 5000
 # CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
 # EXPOSE 8000
 CMD ["gunicorn","-b","0.0.0.0","-w","4","app:app"]
-# ENTRYPOINT [ "gunicorn","app:app","-b","0.0.0.0" ]
+# EXPOSE 8000
+# ENTRYPOINT ["gunicorn","-b","0.0.0.0","-w","4","app:app"]
