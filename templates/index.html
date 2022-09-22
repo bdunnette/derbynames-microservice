@@ -5,17 +5,13 @@
 </head>
 
 <body>
-{% if name %}
-  <h1>Hello {{ name }}!</h1>
-{% else %}
-  <h1>Hello, World!</h1>
-{% endif %}
+<h1>Generating Name:</h1>
 <script>
     $.getJSON( "/name", function( data ) {
         var items = [];
         $.each( data, function( key, val ) {
             console.log(key + ": " + val);
-          items.push( "<li id='" + key + "'>" + val + "</li>" );
+          items.push( "<li id='" + key + "'><strong>" + key + "</strong>" + val + "</li>" );
         });
 
         $( "<ul/>", {
