@@ -11,7 +11,7 @@
         var items = [];
         $.each( data, function( key, val ) {
             console.log(key + ": " + val);
-          items.push( "<li id='" + key + "'><strong>" + key + "</strong>" + val + "</li>" );
+          items.push( "<li id='" + key + "'><strong>" + key + ":</strong> " + val + "</li>" );
         });
 
         $( "<ul/>", {
