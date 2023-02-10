@@ -5,11 +5,11 @@ name = "pypi"
 
 [packages]
 flask="*"
-aitextgen="*"
 gunicorn="*"
 flask-cors = "*"
+aitextgen = {ref = "fix_tpu_available", git = "https://github.com/llimllib/aitextgen"}
 
 [dev-packages]
 
 [requires]
-python_version = "3.9"
+python_version = "3.8"
